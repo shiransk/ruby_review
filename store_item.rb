@@ -7,12 +7,25 @@ attr_reader :breed , :age , :name
    @age= pet_hash[:age]
    @name = pet_hash[:name]
  end
+end
+
+ class Food < Pet
+
+  attr_reader :shelf_life
+
+  def initialize(pet_hash)
+    super
+    @shelf_life = "3 Weeks"
+  end
 
 end
 
 wafwaf = Pet.new({breed: "dog" , age: 7 , name: "rocki" })
 
-puts wafwaf.age
+fish = Food.new({breed: "fish" , age: 1 , name: "Nemo" })
+
+puts fish.shelf_life
+
 
 # puts "My pet store"
 

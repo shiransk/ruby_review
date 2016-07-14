@@ -1,17 +1,21 @@
 class BankAccount
-  #test #password test 
+  
+attr_accessor :balance , :account_type
+
   def initialize(starting_balance, account_type)
     @balance = starting_balance
     @account_type = account_type
   end
 
-  def balance
-    @balance
-  end
+  # set value =>   danish.balnce = 50
 
-  def account_type
-    @account_type
-  end
+  # def balance        
+  #   @balance
+  # end
+
+  # def account_type
+  #   @account_type
+  # end
 
   def deposit(amount)
     @balance = @balance + amount
@@ -45,5 +49,6 @@ mark = BankAccount.new(0, "checkings")
 
 danish.transfer_money_to(mark, 8000)
 
+puts danish.balance = 200
 puts danish.balance
-puts mark.balance
+# puts mark.balance

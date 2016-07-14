@@ -1,6 +1,7 @@
 class Employee
 
   attr_reader :first_name
+  attr_accessor :last_name
 
   def initialize(employe_hash)
     @first_name = employe_hash[:first_name]
@@ -9,23 +10,27 @@ class Employee
     @active = true
   end
 
-  # def first_name
-  #   @first_name
-  # end
-
   def set_first_name(new_name)
     @first_name = new_name
   end
 
 end
 
-employe1 = Employee.new({last_name: "Bob" ,first_name: "Barker" ,salary: 100000})
+class Maneger < Employee
+  attr_reader :employes
+  def initialize(employe_hash)
+    super # will need to putt super to inherite intante variebls in initialize metohd.
+    @employes = ["shiran" , "Jhon"]
+  end
 
-puts employe1.first_name
+  def fire_employee
+    puts "Fired!!!"
+  end
+end
 
 
-# puts employe1.first_name
+maneger = Maneger.new({last_name: "Bob" ,first_name: "Barker" ,salary: 100000})
 
-# employe1.set_first_name("sally")
+# puts maneger.employes
 
-# puts employe1.first_name
+puts maneger.last_name = "aaa"
